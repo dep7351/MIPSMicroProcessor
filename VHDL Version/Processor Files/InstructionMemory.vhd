@@ -1,3 +1,12 @@
+-------------------------------------------------
+--  File:          InstructionMemory.vhd
+--  Entity:        InstructionMemory
+--  Architecture:  IMemory
+--  Engineer:      Daniel Pittman
+--  Last Modified: 05/23/23
+--  Description:   The instruction memory component of the instruction 
+--                 fetch stage of the MIPS MicroProcessor
+-------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -10,7 +19,7 @@ entity InstructionMemory is
     );
 end entity;
 
-architecture please of InstructionMemory is
+architecture IMemory of InstructionMemory is
 
     type instructionMemory is array (0 to bytes) of std_logic_vector(7 downto 0); -- creates a type of memory with 1024 addressable bytes
 

@@ -1,3 +1,11 @@
+-------------------------------------------------
+--  File:          InstructionFetch.vhd
+--  Entity:        InstructionFetch
+--  Architecture:  Fetch
+--  Engineer:      Daniel Pittman
+--  Last Modified: 05/23/23
+--  Description:   The instruction fetch stage of the MIPS MicroProcessor
+-------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -13,7 +21,7 @@ entity InstructionFetch is
     );
 end entity;
 
-architecture JesusChrist of InstructionFetch is
+architecture Fetch of InstructionFetch is
 
     signal addr  : std_logic_vector(27 downto 0);
     signal d_out : std_logic_vector(31 downto 0);
