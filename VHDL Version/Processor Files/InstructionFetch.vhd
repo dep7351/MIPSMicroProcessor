@@ -7,6 +7,8 @@ entity InstructionFetch is
     port (
         clk         : in std_logic; -- System Clock
         rst         : in std_logic; -- Active High Reset, Async
+        branch      : in std_logic; -- PCSrc Signal, Active High
+        branchAmt   : in std_logic_vector(27 downto 0); -- the amount to increment the program counter by
         Instruction : out std_logic_vector(31 downto 0) -- instruction fetched from memory
     );
 end entity;
@@ -28,7 +30,11 @@ begin
         if rst = '1' then
             PC <= (others => '0');
         elsif rising_edge(clk) then
-            PC <= std_logic_vector(to_unsigned(to_integer(UNSIGNED(PC)) + 4,28));
+            if branch = '0' then
+                PC <= std_logic_vector(to_unsigned(to_integer(UNSIGNED(PC)) + 4,28));
+            else
+                PC <= std_logic_vector(to_unsigned(to_integer(UNSIGNED(PC)) + to_integer(UNSIGNED(branchAmt)),28));
+            end if;
         end if;
     end process;
 
