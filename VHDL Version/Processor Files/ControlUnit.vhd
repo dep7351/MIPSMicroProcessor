@@ -1,3 +1,11 @@
+-------------------------------------------------
+--  File:          ControlUnit.vhd
+--  Entity:        ControlUnit
+--  Architecture:  control
+--  Engineer:      Daniel Pittman
+--  Last Modified: 05/23/23
+--  Description:   The control unit of the MIPS MicroProcessor
+-------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

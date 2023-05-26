@@ -1,10 +1,9 @@
 -------------------------------------------------
 --  File:          RegisterFile.vhd
---
 --  Entity:        RegisterFile
---  Architecture:  please
---  Author:        Daniel Pittman
---  Created:       01/31/23
+--  Architecture:  Registers
+--  Engineer:      Daniel Pittman
+--  Last Modified: 05/23/23
 --  Description:   The register file component
 -------------------------------------------------
 library ieee;
@@ -29,13 +28,11 @@ entity RegisterFile is
 	);
 end RegisterFile;
 
-architecture please of RegisterFile is
+architecture registers of RegisterFile is
 
     type RegisterFile is array (0 to 2**LOG_PORT_DEPTH) of std_logic_vector(BIT_DEPTH - 1 downto 0);
 
     signal RegFile : RegisterFile := (others => (others => '0'));
-    --constant BIT_DEPTH : integer := 32;
-	--constant LOG_PORT_DEPTH : integer := 5
 
 begin
     
@@ -54,4 +51,4 @@ begin
     RD2 <= RegFile(to_integer(unsigned(Addr2)));
     
 
-end architecture please;
+end architecture;
