@@ -58,7 +58,7 @@ begin
     begin
         if (Opcode = "000000") then -- R-type section
             case Funct is
-                when "100000" => ALUControl <= "0100"; -- ADD
+                when "100001" => ALUControl <= "0100"; -- ADDU
                 when "100100" => ALUControl <= "1010"; -- AND
                 when "011001" => ALUControl <= "0110"; -- MULTU
                 when "100101" => ALUControl <= "1000"; -- OR
@@ -70,7 +70,7 @@ begin
             end case;
         else
             case Opcode is
-                when "001000" => ALUControl <= "0100"; -- ADDI
+                when "001001" => ALUControl <= "0100"; -- ADDIU
                 when "001100" => ALUControl <= "1010"; -- ANDI
                 when "001101" => ALUControl <= "1000"; -- ORI
                 when "001110" => ALUControl <= "1011"; -- XORI

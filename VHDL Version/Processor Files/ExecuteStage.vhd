@@ -31,7 +31,7 @@ architecture praisedbe of ExecuteStage is
 begin
 
     ALU: entity work.ALU
-        port map (in1 => RegSrcA , in2 => secondOperand, control => ALUControl, out1 => ALUResult);
+        port map (Op1 => RegSrcA , Op2 => secondOperand, ALUOp => ALUControl, ALUResult => ALUResult);
     
 
     secondOp_proc : process(ALUSrc,SignImm,RegSrcB) is begin
